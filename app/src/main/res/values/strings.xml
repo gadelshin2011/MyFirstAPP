@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyFirstAPP</string>
+    <string name="login">admin</string>
+    <string name="password">admin</string>
+</resources>
