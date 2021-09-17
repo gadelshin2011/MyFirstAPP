@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstAPP">
         <activity
+            android:name=".Registration"
+            android:exported="true" />
+        <activity
             android:name=".SelectionMenu"
             android:exported="true" />
         <activity

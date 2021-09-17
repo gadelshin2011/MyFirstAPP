@@ -1,5 +1,16 @@
 <resources>
+    <!--MainActivity -->
     <string name="app_name">MyFirstAPP</string>
+    <string name="falseINFO">Не правильные данные</string>
+    <string name="keyReg1">keyReg1</string>
+    <string name="keyReg">keyReg</string>
+
+
+    <!--test data -->
     <string name="login">admin</string>
     <string name="password">admin</string>
+
+
+
+
 </resources>

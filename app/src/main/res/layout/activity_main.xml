@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/showPicture"
-        android:layout_width="322dp"
-        android:layout_height="244dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="161dp"
+        android:layout_height="122dp"
+        app:layout_constraintBottom_toBottomOf="@id/twInfo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,51 +19,82 @@
         app:layout_constraintHorizontal_bias="0.5"
         android:visibility="gone"
         />
+    <TextView
+        android:id="@+id/twInfo"
+        android:layout_width="@dimen/widthButton"
+        android:layout_height="@dimen/heightTextView"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintVertical_bias="0.850"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/editTextPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+
+         />
 
     <EditText
         android:id="@+id/editTextPersonName"
         android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightTextView"
+        android:layout_height="@dimen/heightButton"
+        android:clickable="false"
         android:ems="10"
         android:hint="login"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.600" />
+        app:layout_constraintVertical_bias="0.500" />
 
     <EditText
-        android:id="@+id/editTextPersonPasswordd"
+        android:id="@+id/editTextPersonPassword"
         android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightTextView"
+        android:layout_height="@dimen/heightButton"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/editTextPersonName"
-        app:layout_constraintVertical_bias="0.200" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonName"
+        app:layout_constraintVertical_bias="0.04" />
 
     <Button
         android:id="@+id/buttonAuthorization"
         android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightTextView"
+        android:layout_height="@dimen/heightButton"
         android:text="Authorization"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonPasswordd"
-        app:layout_constraintVertical_bias="0.400"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonPassword"
+        app:layout_constraintVertical_bias="0.100"
         android:onClick="onClickDataVerification"
 
         />
+    <Button
+        android:id="@+id/buttonRegistration"
+        android:layout_width="@dimen/widthButton"
+        android:layout_height="@dimen/heightButton"
+        android:text="Registration"
+        android:onClick="onClickRegistration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAuthorization"
+        app:layout_constraintVertical_bias="0.100"
+        android:visibility="gone"
+        />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
