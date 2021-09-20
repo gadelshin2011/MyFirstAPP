@@ -24,7 +24,7 @@
         android:layout_width="@dimen/widthButton"
         android:layout_height="@dimen/heightButton"
         android:hint="Password"
-        app:layout_constraintVertical_bias="0.200"
+        app:layout_constraintVertical_bias="0.140"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintTop_toTopOf="@+id/twEditLogin"
         app:layout_constraintBottom_toBottomOf="parent"
