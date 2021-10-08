@@ -3,13 +3,18 @@ package com.example.myfirstapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myfirstapp.databinding.ActivityMainBinding
+import com.example.myfirstapp.databinding.ActivityRegistrationBinding
 
-class SelectionMenu : AppCompatActivity() {
-    lateinit var bindingClass : ActivityMainBinding
+class Registration : AppCompatActivity() {
+    lateinit var bindingClass:ActivityRegistrationBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingClass = ActivityMainBinding.inflate(layoutInflater)
+        bindingClass = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
+
+
+
     }
 }

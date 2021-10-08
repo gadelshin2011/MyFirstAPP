@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration">
+
+
+    <LinearLayout
+        android:id="@+id/Top_layout"
+        android:layout_width="409dp"
+        android:layout_height="550dp"
+        android:layout_marginBottom="181dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/PersonLogin"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightTextView"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Login"
+            android:layout_marginTop="300dp"/>
+
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/PersonPassword"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightTextView"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Password"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:id="@+id/button"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightTextView"
+            android:text="Button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Bottom_layout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Top_layout"></LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
