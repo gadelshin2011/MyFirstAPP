@@ -13,8 +13,8 @@ import com.example.myfirstapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
     private var launcher: ActivityResultLauncher<Intent>? = null
-    lateinit var textLogin:String
-    lateinit var textPassword: String
+    lateinit var UserLogin:String
+    lateinit var UserPassword: String
 
 
 
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickDataVerification(view: View){
        pullData()
-       when(comparedValue(textLogin,textPassword)){
+       when(comparedValue(UserLogin,UserPassword)){
             true -> {
                 launcher?.launch(Intent(this,SelectionMenu::class.java))
                 bindingClass.twInfo.text = ""
@@ -63,8 +63,8 @@ class MainActivity : AppCompatActivity() {
 
 
     fun pullData(){
-        textLogin = bindingClass.editTextPersonName.text.toString()
-        textPassword= bindingClass.editTextPersonPassword.text.toString()
+        UserLogin = bindingClass.editTextPersonName.text.toString()
+        UserPassword= bindingClass.editTextPersonPassword.text.toString()
 
         }
 
