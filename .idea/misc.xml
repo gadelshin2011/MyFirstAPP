@@ -5,8 +5,10 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.3848958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_selection_menu.xml" value="0.3697916666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3859375" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/keyhole.xml" value="0.3859375" />
       </map>
     </option>
   </component>

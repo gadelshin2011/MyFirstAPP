@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class Registration : AppCompatActivity() {
     private lateinit var bindingClass: ActivityRegistrationBinding
-  private lateinit var userManager: UserManager
+    private lateinit var userManager: UserManager
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,17 +23,17 @@ class Registration : AppCompatActivity() {
 
 
         // сохраняем и получаем данные, введенные пользователем
-        bindingClass.buttonRegistration.setOnClickListener {
+      /** bindingClass.buttonRegistration.setOnClickListener {
             storeUser()
-        }
+        }*/
 
         /**
-        * Эта функция извлекает сохраненные данные
-        * как только они хранятся и даже
-        * после закрытия и перезапуска приложения
-        */
+         * Эта функция извлекает сохраненные данные
+         * как только они хранятся и даже
+         * после закрытия и перезапуска приложения
+         */
 
-        observeData()
+       // observeData()
 
     }
 
@@ -41,17 +41,17 @@ class Registration : AppCompatActivity() {
 
         /**
          * получение и обновление логина
-        * каждый раз при изменении возраста пользователя это будет наблюдать userLoginFlow
+         * каждый раз при изменении возраста пользователя это будет наблюдать userLoginFlow
          */
 
         userManager.userLoginFlow.asLiveData().observe(this) { login ->
             login?.let {
-                bindingClass.tvLogin.text = "Login:$login"
+
             }
         }
         userManager.userPasswordFlow.asLiveData().observe(this) { password ->
             password?.let {
-                bindingClass.tvPassword.text = "Password:$password"
+
             }
         }
 
@@ -60,9 +60,9 @@ class Registration : AppCompatActivity() {
 
 
     /**
-    * эта функция сохраняет данные в
-    * настройки, когда мы нажимаем кнопку сохранения
-    */
+     * эта функция сохраняет данные в
+     * настройки, когда мы нажимаем кнопку сохранения
+     */
 
     private fun storeUser() {
         val login = bindingClass.twEditLogin.text.toString()
@@ -70,9 +70,9 @@ class Registration : AppCompatActivity() {
 
 
         /**
-        * хранить значения
-        * Наш класс - это функция приостановки, она запускается только внутри области сопрограммы.
-        */
+         * хранить значения
+         * Наш класс - это функция приостановки, она запускается только внутри области сопрограммы.
+         */
 
 
         lifecycleScope.launch {
@@ -94,13 +94,20 @@ class Registration : AppCompatActivity() {
     }
 
 
-    // fun onClickBackMain(view: View){
+    fun onClickBackMain(view: View) {
+        transferData()
+        storeUser()
+        finish()
 
-    /**intent.putExtra(R.string.keyReg.toString(), bindingClass.twEditLogin.text.toString())
-     *intent.putExtra(R.string.keyReg1.toString(), bindingClass.twEditPassword.text.toString())
-     *setResult(RESULT_OK, intent)
-     *finish()*/
+    }
 
+    private fun transferData(){
+
+        intent.putExtra(R.string.keyReg.toString(),bindingClass.twEditLogin.text.toString())
+        intent.putExtra(R.string.keyReg1.toString(), bindingClass.twEditPassword.text.toString())
+        setResult(RESULT_OK, intent)
+
+    }
 }
 
 

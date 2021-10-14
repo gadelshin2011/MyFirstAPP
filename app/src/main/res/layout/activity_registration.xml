@@ -6,72 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".Registration">
 
-    <EditText
-        android:id="@+id/twEditLogin"
-        android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightButton"
-        android:hint="Login"
-        app:layout_constraintVertical_bias="0.500"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <EditText
-        android:id="@+id/twEditPassword"
-        android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightButton"
-        android:hint="Password"
-        app:layout_constraintVertical_bias="0.140"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintTop_toTopOf="@+id/twEditLogin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <Button
-        android:id="@+id/buttonRegistration"
-        android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightButton"
-        android:text="Registration"
-        android:onClick="onClickBackMain"
-        app:layout_constraintHorizontal_bias="0.500"
-        app:layout_constraintVertical_bias="0.800"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/tvLogin"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="192dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/twEditLogin"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.26">
 
-    <TextView
-        android:id="@+id/tvPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="37dp"
-        android:layout_marginEnd="191dp"
-        android:layout_marginBottom="156dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/twEditLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
+        <EditText
+            android:id="@+id/twEditLogin"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightButton"
+            android:hint="Login"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:id="@+id/twEditPassword"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightButton"
+            android:autofillHints=""
+            android:hint="Password"
+            android:layout_marginBottom="10dp"
+            />
+
+        <Button
+            android:id="@+id/buttonRegistration"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightButton"
+            android:onClick="onClickBackMain"
+            android:text="Registration"
+            app:layout_constraintVertical_bias="0.26"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

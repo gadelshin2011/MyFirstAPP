@@ -6,95 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/showPicture"
-        android:layout_width="161dp"
-        android:layout_height="122dp"
-        app:layout_constraintBottom_toBottomOf="@id/twInfo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:autofillHints="Error"
-        app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:visibility="gone"
-        />
     <TextView
-        android:id="@+id/twInfo"
-        android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightTextView"
-        app:layout_constraintHorizontal_bias="0.500"
-        app:layout_constraintVertical_bias="0.850"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/editTextPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/app_name"
+       android:textSize="42dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
 
-
-         />
-
-    <EditText
-        android:id="@+id/editTextPersonName"
-        android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightButton"
-        android:clickable="false"
-        android:ems="10"
-        android:hint="login"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.500" />
+        app:srcCompat="@drawable/key2" />
 
-    <EditText
-        android:id="@+id/editTextPersonPassword"
-        android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightButton"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonName"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26">
 
-    <Button
-        android:id="@+id/buttonAuthorization"
-        android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightButton"
-        android:text="Authorization"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonPassword"
-        app:layout_constraintVertical_bias="0.100"
-        android:onClick="onClickDataVerification"
+        <EditText
+            android:id="@+id/editTextPersonName"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightButton"
+            android:layout_marginBottom="10dp"
+            android:clickable="false"
+            android:ems="10"
+            android:hint="login"
+            android:inputType="textPersonName" />
 
-        />
-    <Button
-        android:id="@+id/buttonRegistration"
-        android:layout_width="@dimen/widthButton"
-        android:layout_height="@dimen/heightButton"
-        android:text="Registration"
-        android:onClick="onClickRegistration"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAuthorization"
-        app:layout_constraintVertical_bias="0.100"
-        android:visibility="gone"
-        />
+        <EditText
+            android:id="@+id/editTextPersonPassword"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightButton"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="false"
+            android:singleLine="false" />
 
+        <TextView
+            android:id="@+id/twInfo"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightTextView"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/red" />
 
+        <Button
+            android:id="@+id/buttonAuthorization"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightButton"
+            android:layout_marginBottom="10dp"
+            android:onClick="onClickDataVerification"
+            android:text="Authorization"
+
+            />
+
+        <Button
+            android:id="@+id/buttonRegistration"
+            android:layout_width="@dimen/widthButton"
+            android:layout_height="@dimen/heightButton"
+            android:layout_marginBottom="10dp"
+            android:onClick="onClickRegistration"
+            android:text="Registration"
+            android:visibility="gone"
+
+            />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

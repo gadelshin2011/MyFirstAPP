@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="widthButton">220dp</dimen>
+    <dimen name="widthButton">300dp</dimen>
     <dimen name="heightButton">48dp</dimen>
     <dimen name="heightTextView">32dp</dimen>
 
