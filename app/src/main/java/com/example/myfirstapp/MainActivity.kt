@@ -25,15 +25,11 @@ class MainActivity : AppCompatActivity() {
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
-
-
-
-
         launcher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
                 if (result.resultCode == RESULT_OK) {
-                    var resultLogin = result.data?.getStringExtra(R.string.keyReg.toString())
-                    var resultPassword = result.data?.getStringExtra(R.string.keyReg1.toString())
+                    var resultLogin = result.data?.getStringExtra(R.string.keyRegLog.toString())
+                    var resultPassword = result.data?.getStringExtra(R.string.keyRegPass.toString())
                     bindingClass.twInfo.text = ""
                     bindingClass.buttonRegistration.visibility = View.GONE
                     bindingClass.editTextPersonName.setText(resultLogin)
@@ -53,24 +49,17 @@ class MainActivity : AppCompatActivity() {
             true -> {
                 launcher?.launch(Intent(this, SelectionMenu::class.java))
                 bindingClass.twInfo.text = ""
-
-
             }
-
             false -> falseData()
         }
-
-
     }
 
     fun onClickRegistration(view: View) {
         launcher?.launch(Intent(this, Registration::class.java))
-        bindingClass.twInfo.text= ""
+        bindingClass.twInfo.text = ""
         bindingClass.editTextPersonPassword.text.clear()
         bindingClass.editTextPersonName.text.clear()
     }
-
-
     fun pullData() {
         UserLogin = bindingClass.editTextPersonName.text.toString()
         UserPassword = bindingClass.editTextPersonPassword.text.toString()
@@ -84,8 +73,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun falseData() {
-        bindingClass.twInfo.text = getString(R.string.falseINFO);
-        bindingClass.buttonRegistration.visibility = View.VISIBLE;
+        bindingClass.twInfo.text = getString(R.string.falseINFO)
+        bindingClass.buttonRegistration.visibility = View.VISIBLE
         //openPictureMinus()
     }
     /** private fun openPicturePlus(){

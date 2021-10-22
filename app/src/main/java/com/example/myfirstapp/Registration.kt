@@ -2,8 +2,10 @@ package com.example.myfirstapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import com.example.myfirstapp.databinding.ActivityRegistrationBinding
@@ -18,8 +20,10 @@ class Registration : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
+        startActionBar()
         // Здесь мы получаем ссылку на наш класс userManager
         userManager = UserManager(applicationContext)
+
 
 
         // сохраняем и получаем данные, введенные пользователем
@@ -35,6 +39,13 @@ class Registration : AppCompatActivity() {
 
        // observeData()
 
+    }
+  // function actionBar
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home){
+            finish()
+        }
+        return true
     }
 
     private fun observeData() {
@@ -54,8 +65,6 @@ class Registration : AppCompatActivity() {
 
             }
         }
-
-
     }
 
 
@@ -65,8 +74,8 @@ class Registration : AppCompatActivity() {
      */
 
     private fun storeUser() {
-        val login = bindingClass.twEditLogin.text.toString()
-        val password = bindingClass.twEditPassword.text.toString()
+        val login = bindingClass.tvEditLogin.text.toString()
+        val password = bindingClass.tvEditPassword.text.toString()
 
 
         /**
@@ -86,8 +95,8 @@ class Registration : AppCompatActivity() {
             // после сохранения нашего пользователя
             // нам нужно очистить входные данные в нашем тексте редактирования
 
-            bindingClass.twEditLogin.text.clear()
-            bindingClass.twEditPassword.text.clear()
+            bindingClass.tvEditLogin.text.clear()
+            bindingClass.tvEditPassword.text.clear()
         }
 
 
@@ -96,19 +105,25 @@ class Registration : AppCompatActivity() {
 
     fun onClickBackMain(view: View) {
         transferData()
-        storeUser()
         finish()
 
     }
 
     private fun transferData(){
 
-        intent.putExtra(R.string.keyReg.toString(),bindingClass.twEditLogin.text.toString())
-        intent.putExtra(R.string.keyReg1.toString(), bindingClass.twEditPassword.text.toString())
+        intent.putExtra(R.string.keyRegLog.toString(),bindingClass.tvEditLogin.text.toString())
+        intent.putExtra(R.string.keyRegPass.toString(), bindingClass.tvEditPassword.text.toString())
         setResult(RESULT_OK, intent)
 
     }
+
+    private fun startActionBar(){
+        val actionBar: ActionBar? = supportActionBar
+        actionBar?.setHomeButtonEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+    }
 }
+
 
 
 

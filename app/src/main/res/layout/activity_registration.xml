@@ -17,7 +17,7 @@
         app:layout_constraintVertical_bias="0.26">
 
         <EditText
-            android:id="@+id/twEditLogin"
+            android:id="@+id/tvEditLogin"
             android:layout_width="@dimen/widthButton"
             android:layout_height="@dimen/heightButton"
             android:hint="Login"
@@ -25,7 +25,7 @@
             />
 
         <EditText
-            android:id="@+id/twEditPassword"
+            android:id="@+id/tvEditPassword"
             android:layout_width="@dimen/widthButton"
             android:layout_height="@dimen/heightButton"
             android:autofillHints=""
