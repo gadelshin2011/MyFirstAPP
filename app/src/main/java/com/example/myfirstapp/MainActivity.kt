@@ -14,7 +14,6 @@ import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
-    private lateinit var userManager: UserManager
     private var launcher: ActivityResultLauncher<Intent>? = null
     lateinit var UserLogin: String
     lateinit var UserPassword: String
@@ -24,7 +23,50 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
+        getDataActivityRegistration()
+    }
 
+    fun onClickDataVerification(view: View) {
+        getDataTextView()
+
+        when (comparedValue()) {
+            true -> {
+                launcher?.launch(Intent(this, SelectionMenu::class.java))
+                bindingClass.twInfo.text = ""
+                clearTextView()
+            }
+            false -> falseData()
+        }
+    }
+
+
+    fun onClickRegistration(view: View) {
+        launcher?.launch(Intent(this, Registration::class.java))
+        bindingClass.twInfo.text = ""
+        clearTextView()
+    }
+
+    private fun getDataTextView() {
+        UserLogin = bindingClass.editTextPersonName.text.toString()
+        UserPassword = bindingClass.editTextPersonPassword.text.toString()
+    }
+
+    private fun comparedValue(): Boolean {
+        return UserLogin == getString(R.string.login) && UserPassword == getString(R.string.password)
+   }
+
+    private fun falseData() {
+        bindingClass.twInfo.text = getString(R.string.falseINFO)
+        bindingClass.buttonRegistration.visibility = View.VISIBLE
+    }
+
+    private fun clearTextView() {
+        bindingClass.editTextPersonName.text.clear()
+        bindingClass.editTextPersonPassword.text.clear()
+    }
+
+
+    private fun getDataActivityRegistration() {
         launcher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
                 if (result.resultCode == RESULT_OK) {
@@ -34,60 +76,9 @@ class MainActivity : AppCompatActivity() {
                     bindingClass.buttonRegistration.visibility = View.GONE
                     bindingClass.editTextPersonName.setText(resultLogin)
                     bindingClass.editTextPersonPassword.setText(resultPassword)
-
-
                 }
 
             }
-
-
     }
 
-    fun onClickDataVerification(view: View) {
-        pullData()
-        when (comparedValue()) {
-            true -> {
-                launcher?.launch(Intent(this, SelectionMenu::class.java))
-                bindingClass.twInfo.text = ""
-            }
-            false -> falseData()
-        }
-    }
-
-    fun onClickRegistration(view: View) {
-        launcher?.launch(Intent(this, Registration::class.java))
-        bindingClass.twInfo.text = ""
-        bindingClass.editTextPersonPassword.text.clear()
-        bindingClass.editTextPersonName.text.clear()
-    }
-    fun pullData() {
-        UserLogin = bindingClass.editTextPersonName.text.toString()
-        UserPassword = bindingClass.editTextPersonPassword.text.toString()
-
-    }
-
-    private fun comparedValue(): Boolean {
-        return UserLogin == getString(R.string.login) && UserPassword == getString(R.string.password)
-
-
-    }
-
-    private fun falseData() {
-        bindingClass.twInfo.text = getString(R.string.falseINFO)
-        bindingClass.buttonRegistration.visibility = View.VISIBLE
-        //openPictureMinus()
-    }
-    /** private fun openPicturePlus(){
-    // bindingClass.showPicture.visibility=View.VISIBLE
-    //bindingClass.showPicture.setImageResource(R.drawable.plus)
-    }
-    private fun openPictureMinus(){
-
-    bindingClass.showPicture.setImageResource(R.drawable.minus)
-    }
-    private fun trueData(){
-    bindingClass.buttonRegistration.visibility = View.GONE
-    openPicturePlus()
-
-    }*/
 }

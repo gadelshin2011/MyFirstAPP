@@ -34,12 +34,13 @@ class SelectionMenu : AppCompatActivity() {
         bindingClass.bottomNavigationMenu.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.windows_password -> {
-                    Toast.makeText(this, "Password", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Password", Toast.LENGTH_SHORT).show()
                     openFragmentPassword()
+
 
                 }
                 R.id.windows_home -> {
-                    Toast.makeText(this, "home", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "home", Toast.LENGTH_SHORT).show()
                     openFragmentHome()
                 }
             }
@@ -49,21 +50,39 @@ class SelectionMenu : AppCompatActivity() {
     }
 
 
-    private fun openFragmentPassword() {
+     fun openFragmentPassword() {
         supportFragmentManager
             .beginTransaction().replace(R.id.FragmentAccount, passwordFragment.newInstance())
             .commit()
     }
 
-    private fun openFragmentHome() {
+     fun openFragmentHome() {
         supportFragmentManager
-            .beginTransaction().replace(R.id.FragmentAccount, HomeFragment.newInstance()).commit()
+            .beginTransaction().replace(R.id.FragmentAccount, HomeFragment.newInstance())
+            .commit()
     }
+
 
     private fun startActionBar() {
         val actionBar: ActionBar? = supportActionBar
         actionBar?.setHomeButtonEnabled(true)
         actionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+
+
+
+
+    private fun openFragmentAddData() {
+        supportFragmentManager
+            .beginTransaction().replace(R.id.FragmentAccount, AddDataFragment.newInstance())
+            .commit()
+    }
+    fun onClickOpenFragmentAddData(view: View){
+        openFragmentAddData()
+    }
+    fun onClickFinish(view: View) {
+        finish()
     }
 
 
