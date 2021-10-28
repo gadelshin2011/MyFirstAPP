@@ -27,20 +27,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickDataVerification(view: View) {
-        getDataTextView()
-        launcher?.launch(Intent(this, SelectionMenu::class.java))
-             bindingClass.twInfo.text = ""
-                clearTextView()
-
-     //   when (comparedValue()) {
-//
-        //            true -> {
-//                launcher?.launch(Intent(this, SelectionMenu::class.java))
-//                bindingClass.twInfo.text = ""
-//                clearTextView()
-//            }
- //           false -> falseData()
-     //   }
+          when (comparedValue()) {
+                  true -> {
+                launcher?.launch(Intent(this, SelectionMenu::class.java))
+                bindingClass.twInfo.text = ""
+               clearTextView()
+            }
+           false -> falseData()
+    }
     }
 
 
