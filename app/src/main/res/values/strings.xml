@@ -33,6 +33,7 @@
     <string name="Registration">Registration</string>
     <string name="Authorization">Authorization</string>
     <string name="AddNewData">Add new data</string>
+    <string name="Cancel">Cancel</string>
 
 
 </resources>

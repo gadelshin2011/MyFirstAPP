@@ -30,6 +30,16 @@ class passwordFragment : Fragment() {
 
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.buttonOpenAddNewData.setOnClickListener {
+                 parentFragmentManager
+                .beginTransaction().replace(com.example.myfirstapp.R.id.FragmentAccount, AddDataFragment.newInstance())
+                .commit()
+        }
+    }
+
 
     companion object {
         @JvmStatic

@@ -28,15 +28,19 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickDataVerification(view: View) {
         getDataTextView()
-
-        when (comparedValue()) {
-            true -> {
-                launcher?.launch(Intent(this, SelectionMenu::class.java))
-                bindingClass.twInfo.text = ""
+        launcher?.launch(Intent(this, SelectionMenu::class.java))
+             bindingClass.twInfo.text = ""
                 clearTextView()
-            }
-            false -> falseData()
-        }
+
+     //   when (comparedValue()) {
+//
+        //            true -> {
+//                launcher?.launch(Intent(this, SelectionMenu::class.java))
+//                bindingClass.twInfo.text = ""
+//                clearTextView()
+//            }
+ //           false -> falseData()
+     //   }
     }
 
 
