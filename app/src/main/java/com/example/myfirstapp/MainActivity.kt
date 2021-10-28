@@ -15,8 +15,8 @@ import com.example.myfirstapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
     private var launcher: ActivityResultLauncher<Intent>? = null
-    lateinit var UserLogin: String
-    lateinit var UserPassword: String
+    private lateinit var UserLogin: String
+    private lateinit var UserPassword: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,8 +27,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickDataVerification(view: View) {
+        getDataTextView()
           when (comparedValue()) {
-                  true -> {
+              true -> {
                 launcher?.launch(Intent(this, SelectionMenu::class.java))
                 bindingClass.twInfo.text = ""
                clearTextView()
