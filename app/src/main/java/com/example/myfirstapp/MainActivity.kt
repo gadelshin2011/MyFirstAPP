@@ -80,4 +80,12 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
+
+    fun addDataTextView(view: View){
+        bindingClass.editTextPersonName.setText(getString(R.string.login))
+        bindingClass.editTextPersonPassword.setText(getString(R.string.password))
+
+
+    }
+
 }

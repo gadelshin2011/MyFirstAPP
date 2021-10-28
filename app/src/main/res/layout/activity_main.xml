@@ -91,6 +91,13 @@
             android:visibility="gone"
 
             />
+
+        <Button
+            android:id="@+id/buttonAddData"
+            android:layout_width="43dp"
+            android:layout_height="30dp"
+            android:onClick="addDataTextView"
+            android:text=" "/>
     </LinearLayout>
 
 
